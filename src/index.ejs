@@ -11,16 +11,14 @@
 </head>
 <body>
 <div class="container container-<%= type %>">
-    <main>
-        <div id="carousel">
-            <% require('./config').slides.forEach((slide, index) => { %>
-                <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
-                         style="background-image: <%= slide.background.image %>; background-color: <%= slide.background.color %>;">
-                    <%= slide.content %>
-                </section>
-            <% }) %>
-        </div>
-        <div class="disclaimer"><%= require('./config').disclaimer %></div>
+    <main id="carousel">
+        <% require('./config').slides.forEach((slide, index) => { %>
+            <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
+                     style="background-image: <%= slide.background.image %>; background-color: <%= slide.background.color %>;">
+                <%= slide.content %>
+                <div class="disclaimer"><%= require('./config').disclaimer %></div>
+            </section>
+        <% }) %>
     </main>
     <aside>
         <img src="<%= require('./assets/logo.svg') %>" alt="Evrenzo roxadustat"/>
@@ -35,7 +33,7 @@
     autoPlay: false,
     loop: false,
     // @todo change back to -1 when finished with dev work
-    slideIndex: 0,
+    slideIndex: 2,
   };
 
   (function nextSlide () {

@@ -25,7 +25,14 @@ module.exports = {
       timeout: 4000,
     },
     {
-      content: `3`,
+      content: `
+        <h1 class="title">EVRENZO™ harnesses the HIF pathway to <br/>stimulate erythropoiesis<sup>1,2</sup> </h1>
+        <ul>
+            <li>HIF (hypoxia-inducible factor) is a central regulator of erythropoiesis<sup>3</sup></li>
+            <li>EVRENZO is the first treatment to activate the HIF pathway<sup>4</sup></li>
+            <li>Through this action, EVRENZO mimics the body’s natural response to hypoxia<sup>2</sup></li>
+        </ul>
+      `,
       background: {
         color: `#007A33`,
       },
