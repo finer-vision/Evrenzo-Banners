@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Ad Banners</title>
+</head>
+<body>
+<div class="container container-<%= type %>">
+    <main id="carousel">
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <section>4</section>
+    </main>
+    <aside>
+        <img src="<%= require('./assets/logo.svg') %>" alt="Evrenzo roxadustat"/>
+        <small><%= require('./config').jobCode %></small>
+    </aside>
+</div>
+<script>
+  const config = {
+    autoPlay: false,
+    loop: false,
+    slides: [
+      {
+        timeout: 4000,
+      },
+      {
+        timeout: 4000,
+      },
+      {
+        timeout: 4000,
+      },
+      {
+        timeout: 3000,
+      },
+    ],
+  };
+
+  const carousel = document.querySelector("#carousel");
+
+  let slideIndex = -1;
+
+  (function nextSlide () {
+    slideIndex++;
+    if (!config.slides[slideIndex]) {
+      if (!config.loop) return;
+      slideIndex = 0;
+    }
+    carousel.style.setProperty("--slide-index", slideIndex);
+    if (!config.autoPlay) return;
+    setTimeout(nextSlide, config.slides[slideIndex].timeout);
+  })();
+</script>
+</body>
+</html>
