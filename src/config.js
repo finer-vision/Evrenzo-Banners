@@ -44,7 +44,7 @@ module.exports = {
           <div>
               <p>This advert is intended for UK and EU audience only.</p>
               <p>Please note that indications and availability may vary in different countries.</p>
-              <p>Refer to your local summary of product characteristics/prescribing information for details.</p>
+              <p><span class="underline">Refer to your local summary of product characteristics/</span> prescribing information for details.</p>
           </div>
           <ol>
             <li>EVRENZO SmPC.</li>
