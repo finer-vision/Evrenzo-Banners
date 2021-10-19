@@ -11,7 +11,7 @@ module.exports = {
         <h1 class="title">In anaemia of chronic kidney disease (CKD), <br/>the treatment landscape is changing</h1>
       `,
       background: {
-        image: `url(${require("./assets/background.jpg")})`,
+        image: `url(${require('./assets/background.jpg')})`,
       },
       timeout: 4000,
     },
@@ -20,7 +20,7 @@ module.exports = {
         <h1 class="title">Follow a new pathway to <br/>treat anaemia of CKD…</h1>
       `,
       background: {
-        image: `url(${require("./assets/background.jpg")})`,
+        image: `url(${require('./assets/background.jpg')})`,
       },
       timeout: 4000,
     },
@@ -39,11 +39,26 @@ module.exports = {
       timeout: 4000,
     },
     {
-      content: `4`,
+      content: `
+        <div class="grid grid-3">
+          <div>
+              <p>This advert is intended for UK and EU audience only.</p>
+              <p>Please note that indications and availability may vary in different countries.</p>
+              <p>Refer to your local summary of product characteristics/prescribing information for details.</p>
+          </div>
+          <ol>
+            <li>EVRENZO SmPC.</li>
+            <li>Del Vecchio L, LocateIIi F. Expert Opin Investig Drugs. <br/>2018;27(1):125-133.</li>
+            <li>Locatelli F et al. Am J Nephrol. 2017;45:187-199.</li>
+            <li>Sanghani NS, Haase VH. Adv Chronic Kidney Dis 2019; <br/>26:253–266.</li>
+          </ol>
+          <img src="${require('./assets/astellas-logo.svg')}" alt="Astellas"/>
+        </div>
+      `,
       background: {
         color: `#007A33`,
       },
       timeout: 3000,
     },
   ],
-};
+}

@@ -30,6 +30,7 @@
   const slides = carousel.querySelectorAll("section");
 
   const state = {
+    // @todo change back to true when finished with dev work
     autoPlay: false,
     loop: false,
     // @todo change back to -1 when finished with dev work
@@ -43,6 +44,10 @@
       state.slideIndex = 0;
     }
     carousel.style.setProperty("--slide-index", state.slideIndex);
+    slides.forEach(slide => {
+      slide.style.opacity = "0";
+    })
+    slides[state.slideIndex].style.opacity = "1";
     if (!state.autoPlay) return;
     setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
   })();
