@@ -11,11 +11,16 @@
 </head>
 <body>
 <div class="container container-<%= type %>">
-    <main id="carousel">
-        <section>1</section>
-        <section>2</section>
-        <section>3</section>
-        <section>4</section>
+    <main>
+        <div id="carousel">
+            <% require('./config').slides.forEach((slide, index) => { %>
+                <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
+                         style="background-image: <%= slide.background.image %>; background-color: <%= slide.background.color %>;">
+                    <%= slide.content %>
+                </section>
+            <% }) %>
+        </div>
+        <div class="disclaimer"><%= require('./config').disclaimer %></div>
     </main>
     <aside>
         <img src="<%= require('./assets/logo.svg') %>" alt="Evrenzo roxadustat"/>
@@ -23,38 +28,25 @@
     </aside>
 </div>
 <script>
-  const config = {
+  const carousel = document.querySelector("#carousel");
+  const slides = carousel.querySelectorAll("section");
+
+  const state = {
     autoPlay: false,
     loop: false,
-    slides: [
-      {
-        timeout: 4000,
-      },
-      {
-        timeout: 4000,
-      },
-      {
-        timeout: 4000,
-      },
-      {
-        timeout: 3000,
-      },
-    ],
+    // @todo change back to -1 when finished with dev work
+    slideIndex: 0,
   };
 
-  const carousel = document.querySelector("#carousel");
-
-  let slideIndex = -1;
-
   (function nextSlide () {
-    slideIndex++;
-    if (!config.slides[slideIndex]) {
-      if (!config.loop) return;
-      slideIndex = 0;
+    state.slideIndex++;
+    if (!slides[state.slideIndex]) {
+      if (!state.loop) return;
+      state.slideIndex = 0;
     }
-    carousel.style.setProperty("--slide-index", slideIndex);
-    if (!config.autoPlay) return;
-    setTimeout(nextSlide, config.slides[slideIndex].timeout);
+    carousel.style.setProperty("--slide-index", state.slideIndex);
+    if (!state.autoPlay) return;
+    setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
   })();
 </script>
 </body>

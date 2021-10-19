@@ -135,6 +135,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-style: inherit;
+  text-rendering: inherit;
 }
 
 html,
@@ -149,6 +155,8 @@ body {
   background-color: #ccc;
   font-family: "Trade Gothic LT Std", Arial, sans-serif;
   font-weight: normal;
+  font-style: normal;
+  text-rendering: geometricPrecision;
 }
 
 .container-billboard {
@@ -162,6 +170,10 @@ body {
   height: var(--height);
   display: grid;
   background-color: #ddd;
+}
+
+main {
+  position: relative;
 }
 
 aside {
@@ -192,10 +204,56 @@ aside img {
   display: flex;
   white-space: normal;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 #carousel section {
   min-width: 100%;
   height: 100%;
   transform: translate(calc(var(--slide-index) * -100%), 0%);
+  padding-top: 27px;
+  padding-left: 25px;
+  background-repeat: no-repeat;
+}
+
+.prelude {
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  width: max-content;
+}
+
+.highlight-primary {
+  color: #007A33;
+}
+
+.disclaimer {
+  position: absolute;
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  width: 156px;
+  bottom: 27px;
+  left: 25px;
+}
+
+/**
+  Billboard
+*/
+
+.container-billboard #carousel section {
+  background-size: 150% auto;
+  background-position: 40% 20%;
+}
+
+.container-billboard #carousel section[data-slide-index="0"] .title {
+  margin-top: 34px;
+  text-align: center;
 }
