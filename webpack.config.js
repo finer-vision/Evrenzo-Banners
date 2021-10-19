@@ -64,7 +64,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     clean: true,
-    publicPath: "",
+    publicPath: "./",
   },
 };
 
