@@ -26,31 +26,40 @@
     </aside>
 </div>
 <script>
-  const carousel = document.querySelector("#carousel");
-  const slides = carousel.querySelectorAll("section");
+  window.addEventListener("load", () => {
+    const carousel = document.querySelector("#carousel");
+    const slides = carousel.querySelectorAll("section");
 
-  const state = {
-    // @todo change back to true when finished with dev work
-    autoPlay: true,
-    loop: false,
-    // @todo change back to -1 when finished with dev work
-    slideIndex: -1,
-  };
+    const externalState = window.state || {}
 
-  (function nextSlide () {
-    state.slideIndex++;
-    if (!slides[state.slideIndex]) {
-      if (!state.loop) return;
-      state.slideIndex = 0;
+    const state = {
+      // @todo change back to true when finished with dev work
+      autoPlay: true,
+      loop: false,
+      // @todo change back to -1 when finished with dev work
+      slideIndex: -1,
+      ...externalState,
+    };
+
+    function nextSlide () {
+      state.slideIndex++;
+      if (!slides[state.slideIndex]) {
+        if (!state.loop) return;
+        state.slideIndex = 0;
+      }
+      carousel.style.setProperty("--slide-index", state.slideIndex);
+      slides.forEach(slide => {
+        slide.style.opacity = "0";
+      })
+      slides[state.slideIndex].style.opacity = "1";
+      if (!state.autoPlay) return;
+      setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
     }
-    carousel.style.setProperty("--slide-index", state.slideIndex);
-    slides.forEach(slide => {
-      slide.style.opacity = "0";
-    })
-    slides[state.slideIndex].style.opacity = "1";
-    if (!state.autoPlay) return;
-    setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
-  })();
+
+    nextSlide()
+
+    document.body.addEventListener("nextslide", nextSlide)
+  })
 </script>
 </body>
 </html>
