@@ -19,6 +19,7 @@ jobs:
           rm -rf node_modules package-lock.json
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install
           npm run build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
@@ -26,3 +27,8 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           CLEAN: true
+
+      - name: Slack Notification
+          uses: rtCamp/action-slack-notify@v2
+          env:
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DEPLOYMENTS }}
