@@ -3,76 +3,86 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const puppeteer = require("puppeteer");
+const config = require("../src/config");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const STORAGE_DIR = path.resolve(__dirname, "..", "storage");
 
-const billboardFile = path.join(BUILD_DIR, "billboard.html");
-
-if (!fs.existsSync(billboardFile)) {
-  console.error("No billboard.html file in build directory");
-  process.exit(1);
-}
-
-const config = {
-  size: {
-    width: 720,
-    height: 250,
-  },
-};
-
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: true,
-    defaultViewport: config.size,
-  });
+  const browser = await puppeteer.launch();
   try {
-    const page = await browser.newPage();
-    await page.goto(`file://${billboardFile}`, { waitUntil: "networkidle0" });
+    const types = [
+      "billboard",
+      "leaderboard",
+      "mpu",
+      "skyscraper",
+      "half-page",
+    ];
 
-    async function screenshotSlide(index) {
-      await page.screenshot({
-        type: "jpeg",
-        path: path.join(STORAGE_DIR, `billboard-${index}.jpg`),
-        quality: 100,
-      });
-    }
+    await Promise.all(
+      types.map(async (type) => {
+        const file = path.join(BUILD_DIR, "billboard.html");
 
-    await page.evaluate(() => {
-      window.state = window.state || {
-        autoPlay: false,
-        loop: false,
-        slideIndex: -1,
-      };
+        if (!fs.existsSync(file)) {
+          return console.warn(
+            `No ${type}.html file in build directory, skipping GIF generation for ${type}`
+          );
+        }
 
-      // Disable slide transitions
-      const carousel = document.querySelector("#carousel");
-      const slides = carousel.querySelectorAll("section");
-      carousel.style.transition = "none";
-      slides.forEach((slide) => {
-        slide.style.transition = "none";
-      });
-    });
+        const page = await browser.newPage();
+        await page.setViewport({
+          width: config[type].width,
+          height: config[type].height,
+        });
+        await page.goto(`file://${file}`, {
+          waitUntil: "networkidle0",
+        });
 
-    async function nextSlide() {
-      await page.evaluate(() => {
-        window.nextSlide();
-      });
-    }
+        async function screenshotSlide(index) {
+          await page.screenshot({
+            type: "jpeg",
+            path: path.join(STORAGE_DIR, `${type}-${index}.jpg`),
+            quality: 100,
+          });
+        }
 
-    for (let i = 0; i < 4; i++) {
-      await screenshotSlide(i);
-      if (i < 3) {
-        await nextSlide();
-      }
-    }
+        await page.evaluate(() => {
+          window.state = window.state || {
+            autoPlay: false,
+            loop: false,
+            slideIndex: -1,
+          };
 
-    const input = path.join(STORAGE_DIR, "billboard-*.jpg");
-    const output = path.join(STORAGE_DIR, "billboard.gif");
+          // Disable slide transitions
+          const carousel = document.querySelector("#carousel");
+          const slides = carousel.querySelectorAll("section");
+          carousel.style.transition = "none";
+          slides.forEach((slide) => {
+            slide.style.transition = "none";
+          });
+        });
 
-    execSync(`convert -delay 400 -loop 0 ${input} ${output}`);
+        async function nextSlide() {
+          await page.evaluate(() => {
+            window.nextSlide();
+          });
+        }
 
-    execSync(`rm -f ${input}`);
+        for (let i = 0; i < 4; i++) {
+          await screenshotSlide(i);
+          if (i < 3) {
+            await nextSlide();
+          }
+        }
+
+        const input = path.join(STORAGE_DIR, `${type}-*.jpg`);
+        const output = path.join(STORAGE_DIR, `${type}.gif`);
+
+        execSync(`convert -delay 400 -loop 0 ${input} ${output}`);
+
+        execSync(`rm -f ${input}`);
+      })
+    );
   } catch (err) {
     console.error(err);
     process.exit(1);
