@@ -10,7 +10,7 @@ const config = {
   mode: DEV_MODE ? "development" : "production",
   target: DEV_MODE ? "web" : "browserslist",
   stats: "minimal",
-  entry: path.join(SRC_DIR, "styles.css"),
+  entry: [path.join(SRC_DIR, "main.js"), path.join(SRC_DIR, "main.css")],
   devServer: {
     hot: true,
     devMiddleware: {
@@ -57,9 +57,17 @@ const config = {
         type: "billboard",
         mode: process.env.NODE_ENV,
       },
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
     }),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "[name].css",
     }),
   ],
   output: {
