@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" style="
-        --width: <%= width %>;
-        --height: <%= height %>;
-        --hcp-disclaimer-font-size: <%= hcpDisclaimer.fontSize %>;
-        --hcp-disclaimer-top: <%= hcpDisclaimer.top %>;
-        --hcp-disclaimer-left: <%= hcpDisclaimer.left %>;
-        --title-font-size: <%= titleFontSize %>
+        --width: <%= require("./config")[type].width %>px;
+        --height: <%= require("./config")[type].height %>px;
+        --hcp-disclaimer-font-size: <%= require("./config")[type].hcpDisclaimer.fontSize %>px;
+        --hcp-disclaimer-top: <%= require("./config")[type].hcpDisclaimer.top %>px;
+        --hcp-disclaimer-left: <%= require("./config")[type].hcpDisclaimer.left %>px;
+        --title-font-size: <%= require("./config")[type].titleFontSize %>px
         ">
 <head>
     <meta charset="UTF-8"/>
@@ -24,15 +24,24 @@
             <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
                      style="background-color: <%= slide.backgroundColor %>;">
                 <%= slide.content %>
-                <div class="hcp-disclaimer">
-                    <%= require('./config').hcpDisclaimer %>
-                </div>
+                <% if (["billboard", "leaderboard"].includes(type)) { %>
+                    <div class="hcp-disclaimer">
+                        <%= require('./config').hcpDisclaimer %>
+                    </div>
+                <% } %>
             </section>
         <% }) %>
     </main>
     <aside>
         <img src="<%= require('./config').content.logos.evrenzo %>" alt="Evrenzo roxadustat"/>
-        <small><%= require('./config').jobCode %></small>
+        <div class="legal">
+            <% if (["mpu", "skyscraper", "half-page"].includes(type)) { %>
+                <div class="hcp-disclaimer">
+                    <%= require('./config').hcpDisclaimer %>
+                </div>
+            <% } %>
+            <small><%= require('./config').jobCode %></small>
+        </div>
     </aside>
 </div>
 <script>window.mode = "<%= mode %>";</script>

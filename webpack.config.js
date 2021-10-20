@@ -6,71 +6,15 @@ const DEV_MODE = process.env.NODE_ENV === "development";
 const SRC_DIR = path.resolve(__dirname, "src");
 const BUILD_DIR = path.resolve(__dirname, "build");
 
-const types = [
-  {
-    type: "billboard",
-    width: "720px",
-    height: "250px",
-    hcpDisclaimer: {
-      fontSize: "8px",
-      top: "200px",
-      left: "25px",
-    },
-    titleFontSize: "26px",
-  },
-  {
-    type: "leaderboard",
-    width: "728px",
-    height: "90px",
-    hcpDisclaimer: {
-      fontSize: "8px",
-      top: "58px",
-      left: "9px",
-    },
-    titleFontSize: "20px",
-  },
-  {
-    type: "mpu",
-    width: "300px",
-    height: "250px",
-    hcpDisclaimer: {
-      fontSize: "8px",
-      top: "0px",
-      left: "25px",
-    },
-    titleFontSize: "20px",
-  },
-  {
-    type: "skyscraper",
-    width: "160px",
-    height: "600px",
-    hcpDisclaimer: {
-      fontSize: "8px",
-      top: "0px",
-      left: "25px",
-    },
-    titleFontSize: "20px",
-  },
-  {
-    type: "half-page",
-    width: "300px",
-    height: "600px",
-    hcpDisclaimer: {
-      fontSize: "8px",
-      top: "0px",
-      left: "25px",
-    },
-    titleFontSize: "20px",
-  },
-];
+const types = ["billboard", "leaderboard", "mpu", "skyscraper", "half-page"];
 
 const templates = types.map((type) => {
   return new HtmlWebpackPlugin({
     template: path.join(SRC_DIR, "index.ejs"),
     inject: true,
-    filename: `${type.type}.html`,
+    filename: `${type}.html`,
     templateParameters: {
-      ...type,
+      type,
       mode: process.env.NODE_ENV,
     },
     minify: {

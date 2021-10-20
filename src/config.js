@@ -3,7 +3,7 @@ const content = {
     primary: "#007A33",
   },
   backgroundImage: require("./assets/background.jpg"),
-  jobCode: `EVZ_2021_0060_UK <br/>OCTOBER 2021`,
+  jobCode: `EVZ_2021_0060_UK OCTOBER 2021`,
   logos: {
     evrenzo: require("./assets/evrenzo-logo.svg"),
     astellas: require("./assets/astellas-logo.svg"),
@@ -14,7 +14,7 @@ const content = {
   `,
   intro: `
     <h2 class="prelude">EVRENZO (roxadustat) is indicated for treatment of adult patients with symptomatic anaemia associated with CKD<sup>1</sup></h2>
-    <h1 class="title">In anaemia of chronic kidney disease (CKD), <br/>the treatment landscape is changing</h1>
+    <h1 class="title">In anaemia of chronic kidney disease (CKD), the treatment landscape is changing</h1>
   `,
   treatment: `
     <h1 class="title">Follow a new pathway to treat anaemia of CKD…</h1>
@@ -49,6 +49,56 @@ const config = {
   backgroundImage: content.backgroundImage,
   jobCode: content.jobCode,
   hcpDisclaimer: content.hcpDisclaimer,
+  billboard: {
+    width: 720,
+    height: 250,
+    titleFontSize: 26,
+    hcpDisclaimer: {
+      fontSize: 8,
+      top: 200,
+      left: 25,
+    },
+  },
+  leaderboard: {
+    width: 728,
+    height: 90,
+    titleFontSize: 20,
+    hcpDisclaimer: {
+      fontSize: 8,
+      top: 58,
+      left: 9,
+    },
+  },
+  mpu: {
+    width: 300,
+    height: 250,
+    titleFontSize: 20,
+    hcpDisclaimer: {
+      fontSize: 8,
+      top: 0,
+      left: 17,
+    },
+  },
+  skyscraper: {
+    width: 160,
+    height: 600,
+    titleFontSize: 20,
+    hcpDisclaimer: {
+      fontSize: 8,
+      top: 0,
+      left: 25,
+    },
+  },
+  "half-page": {
+    width: 300,
+    height: 600,
+    titleFontSize: 20,
+    hcpDisclaimer: {
+      fontSize: 8,
+      top: 0,
+      left: 25,
+    },
+  },
   slides: {
     billboard: [
       { content: content.intro, timeout: 4000 },
@@ -71,12 +121,12 @@ const config = {
       },
     ],
     leaderboard: [
-      { content: content.intro, timeout: 4000 },
+      { content: content.intro, timeout: 3000 },
       { content: content.treatment, timeout: 4000 },
       {
         content: content.erythropoiesis,
         backgroundColor: content.colors.primary,
-        timeout: 4000,
+        timeout: 3000,
       },
       {
         content: `
@@ -96,27 +146,36 @@ const config = {
         </div>
       `,
         backgroundColor: content.colors.primary,
-        timeout: 3000,
+        timeout: 2000,
       },
     ],
     mpu: [
-      { content: content.intro, timeout: 4000 },
+      { content: content.intro, timeout: 3000 },
       { content: content.treatment, timeout: 4000 },
       {
         content: content.erythropoiesis,
         backgroundColor: content.colors.primary,
-        timeout: 4000,
+        timeout: 3000,
       },
       {
         content: `
-        <div class="grid grid-3">
-          ${content.disclaimer}
-          ${content.references}
-          <img src="${content.logos.astellas}" alt="Astellas"/>
+        <div class="grid">
+            <img src="${content.logos.astellas}" alt="Astellas"/>
+            ${content.references}
         </div>
       `,
         backgroundColor: content.colors.primary,
         timeout: 3000,
+      },
+      {
+        content: `
+        <div class="grid">
+            <img src="${content.logos.astellas}" alt="Astellas"/>
+            ${content.disclaimer}
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 2000,
       },
     ],
     skyscraper: [
