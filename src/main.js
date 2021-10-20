@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   const state = {
     autoPlay: window.mode === "production" ? true : false,
     loop: window.mode === "production" ? false : false,
-    slideIndex: window.mode === "production" ? -1 : -1,
+    slideIndex: window.mode === "production" ? -1 : 2,
     ...externalState,
   };
 
@@ -20,8 +20,10 @@ window.addEventListener("load", () => {
     carousel.dataset.slideIndex = state.slideIndex;
     slides.forEach((slide) => {
       slide.style.opacity = "0";
+      slide.style.pointerEvents = "none";
     });
     slides[state.slideIndex].style.opacity = "1";
+    slides[state.slideIndex].style.pointerEvents = "auto";
     if (!state.autoPlay) return;
     setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
   }

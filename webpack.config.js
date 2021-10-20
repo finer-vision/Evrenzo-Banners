@@ -11,31 +11,56 @@ const types = [
     type: "billboard",
     width: "720px",
     height: "250px",
-    hcpDisclaimerFontSize: "8px",
+    hcpDisclaimer: {
+      fontSize: "8px",
+      top: "200px",
+      left: "25px",
+    },
+    titleFontSize: "26px",
   },
   {
     type: "leaderboard",
     width: "728px",
     height: "90px",
-    hcpDisclaimerFontSize: "8px",
+    hcpDisclaimer: {
+      fontSize: "8px",
+      top: "58px",
+      left: "9px",
+    },
+    titleFontSize: "20px",
   },
   {
     type: "mpu",
     width: "300px",
     height: "250px",
-    hcpDisclaimerFontSize: "8px",
+    hcpDisclaimer: {
+      fontSize: "8px",
+      top: "0px",
+      left: "25px",
+    },
+    titleFontSize: "20px",
   },
   {
     type: "skyscraper",
     width: "160px",
     height: "600px",
-    hcpDisclaimerFontSize: "8px",
+    hcpDisclaimer: {
+      fontSize: "8px",
+      top: "0px",
+      left: "25px",
+    },
+    titleFontSize: "20px",
   },
   {
     type: "half-page",
     width: "300px",
     height: "600px",
-    hcpDisclaimerFontSize: "8px",
+    hcpDisclaimer: {
+      fontSize: "8px",
+      top: "0px",
+      left: "25px",
+    },
+    titleFontSize: "20px",
   },
 ];
 

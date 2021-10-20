@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" style="--width: <%= width %>; --height: <%= height %>; --hcp-disclaimer-font-size: <%= hcpDisclaimerFontSize %>;">
+<html lang="en" style="
+        --width: <%= width %>;
+        --height: <%= height %>;
+        --hcp-disclaimer-font-size: <%= hcpDisclaimer.fontSize %>;
+        --hcp-disclaimer-top: <%= hcpDisclaimer.top %>;
+        --hcp-disclaimer-left: <%= hcpDisclaimer.left %>;
+        --title-font-size: <%= titleFontSize %>
+        ">
 <head>
     <meta charset="UTF-8"/>
     <meta
@@ -17,7 +24,9 @@
             <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
                      style="background-color: <%= slide.backgroundColor %>;">
                 <%= slide.content %>
-                <div class="disclaimer"><%= require('./config').hcpDisclaimer %></div>
+                <div class="hcp-disclaimer">
+                    <%= require('./config').hcpDisclaimer %>
+                </div>
             </section>
         <% }) %>
     </main>
