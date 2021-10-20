@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const puppeteer = require("puppeteer");
-const config = require("../src/config");
+const config = require("../src/config/types");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const STORAGE_DIR = path.resolve(__dirname, "..", "storage");
@@ -21,7 +21,7 @@ const STORAGE_DIR = path.resolve(__dirname, "..", "storage");
 
     await Promise.all(
       types.map(async (type) => {
-        const file = path.join(BUILD_DIR, "billboard.html");
+        const file = path.join(BUILD_DIR, `${type}.html`);
 
         if (!fs.existsSync(file)) {
           return console.warn(
