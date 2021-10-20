@@ -11,10 +11,11 @@
 </head>
 <body>
 <div class="container container-<%= type %>">
-    <main id="carousel">
+    <main id="carousel" data-slide-index="0"
+          style="background-image: url('<%= require('./config').backgroundImage %>')">
         <% require('./config').slides.forEach((slide, index) => { %>
             <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
-                     style="background-image: <%= slide.background.image %>; background-color: <%= slide.background.color %>;">
+                     style="background-color: <%= slide.backgroundColor %>;">
                 <%= slide.content %>
                 <div class="disclaimer"><%= require('./config').disclaimer %></div>
             </section>
@@ -48,6 +49,7 @@
         state.slideIndex = 0;
       }
       carousel.style.setProperty("--slide-index", state.slideIndex);
+      carousel.dataset.slideIndex = state.slideIndex;
       slides.forEach(slide => {
         slide.style.opacity = "0";
       })
@@ -56,9 +58,9 @@
       setTimeout(nextSlide, parseInt(slides[state.slideIndex].dataset.timeout));
     }
 
-    nextSlide()
+    window.nextSlide = nextSlide;
 
-    document.body.addEventListener("nextslide", nextSlide)
+    nextSlide()
   })
 </script>
 </body>

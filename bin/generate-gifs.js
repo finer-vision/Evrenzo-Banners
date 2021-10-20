@@ -46,7 +46,9 @@ const config = {
       }
 
       // Disable slide transitions
-      const slides = document.querySelectorAll('#carousel section')
+      const carousel = document.querySelector('#carousel')
+      const slides = carousel.querySelectorAll('section')
+      carousel.style.transition = 'none'
       slides.forEach(slide => {
         slide.style.transition = 'none'
       })
@@ -54,8 +56,7 @@ const config = {
 
     async function nextSlide () {
       await page.evaluate(() => {
-        const slideIndexEvent = new Event('nextslide')
-        document.body.dispatchEvent(slideIndexEvent)
+        window.nextSlide()
       })
     }
 
