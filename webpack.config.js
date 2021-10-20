@@ -6,6 +6,54 @@ const DEV_MODE = process.env.NODE_ENV === "development";
 const SRC_DIR = path.resolve(__dirname, "src");
 const BUILD_DIR = path.resolve(__dirname, "build");
 
+const types = [
+  {
+    type: "billboard",
+    width: "720px",
+    height: "250px",
+  },
+  {
+    type: "leaderboard",
+    width: "728px",
+    height: "90px",
+  },
+  {
+    type: "mpu",
+    width: "300px",
+    height: "250px",
+  },
+  {
+    type: "skyscraper",
+    width: "160px",
+    height: "600px",
+  },
+  {
+    type: "half-page",
+    width: "300px",
+    height: "600px",
+  },
+];
+
+const templates = types.map((type) => {
+  return new HtmlWebpackPlugin({
+    template: path.join(SRC_DIR, "index.ejs"),
+    inject: true,
+    filename: `${type.type}.html`,
+    templateParameters: {
+      type: type.type,
+      mode: process.env.NODE_ENV,
+    },
+    minify: {
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true,
+    },
+  });
+});
+
 const config = {
   mode: DEV_MODE ? "development" : "production",
   target: DEV_MODE ? "web" : "browserslist",
@@ -48,32 +96,11 @@ const config = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(SRC_DIR, "index.ejs"),
-      inject: true,
-      filename: "billboard.html",
-      templateParameters: {
-        type: "billboard",
-        mode: process.env.NODE_ENV,
-      },
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      },
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
-  ],
+  plugins: [...templates, new MiniCssExtractPlugin({ filename: "[name].css" })],
   output: {
     path: BUILD_DIR,
     clean: true,
-    publicPath: "./",
+    publicPath: "",
   },
 };
 
