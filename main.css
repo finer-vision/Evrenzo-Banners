@@ -276,7 +276,19 @@ section[data-slide-index="4"] {
   font-size: 13px;
 }
 
-.container-leaderboard section[data-slide-index="2"] ul {
+.container-leaderboard section[data-slide-index="2"],
+.container-leaderboard section[data-slide-index="3"],
+.container-leaderboard section[data-slide-index="4"] {
   font-size: 10px;
+}
+
+.container-leaderboard section[data-slide-index="3"] .grid,
+.container-leaderboard section[data-slide-index="4"] .grid {
+  grid-template-columns: 157px max-content;
+}
+
+.container-leaderboard section[data-slide-index="4"] .disclaimer {
+  width: 225px;
+  font-size: 8px;
 }
 
