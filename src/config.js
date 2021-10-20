@@ -30,13 +30,13 @@ const content = {
   references: `
     <ol>
       <li>EVRENZO SmPC.</li>
-      <li>Del Vecchio L, LocateIIi F. Expert Opin Investig Drugs. <br/>2018;27(1):125-133.</li>
+      <li>Del Vecchio L, LocateIIi F. Expert Opin Investig Drugs. 2018;27(1):125-133.</li>
       <li>Locatelli F et al. Am J Nephrol. 2017;45:187-199.</li>
-      <li>Sanghani NS, Haase VH. Adv Chronic Kidney Dis 2019; <br/>26:253–266.</li>
+      <li>Sanghani NS, Haase VH. Adv Chronic Kidney Dis 2019; 26:253–266.</li>
     </ol>
   `,
   disclaimer: `
-    <div>
+    <div class="disclaimer">
         <p>This advert is intended for UK and EU audience only.</p>
         <p>Please note that indications and availability may vary in different countries.</p>
         <p><span class="underline">Refer to your local summary of product characteristics/</span> prescribing information for details.</p>
@@ -80,10 +80,19 @@ const config = {
       },
       {
         content: `
-        <div class="grid grid-3">
-          ${content.disclaimer}
-          ${content.references}
-          <img src="${content.logos.astellas}" alt="Astellas"/>
+        <div class="grid">
+            <img src="${content.logos.astellas}" alt="Astellas"/>
+            ${content.references}
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+      {
+        content: `
+        <div class="grid">
+            <img src="${content.logos.astellas}" alt="Astellas"/>
+            ${content.disclaimer}
         </div>
       `,
         backgroundColor: content.colors.primary,
