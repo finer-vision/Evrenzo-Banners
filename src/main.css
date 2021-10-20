@@ -14,11 +14,6 @@
   font-display: swap;
 }
 
-:root {
-  --disclaimer-font-size: 8px;
-  --disclaimer-line-height: 10px;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,8 +63,8 @@ p:last-child {
   margin-bottom: 0;
 }
 
-.container-billboard {
-  grid-template-columns: 579px 141px;
+.container-billboard, .container-leaderboard {
+  grid-template-columns: 0.8041666666666667fr 0.19583333333333333fr;
 }
 
 .container {
@@ -85,8 +80,8 @@ aside {
   place-items: center;
   place-content: center;
   grid-template-rows: 1fr max-content;
-  font-size: var(--disclaimer-font-size);
-  line-height: var(--disclaimer-line-height);
+  font-size: var(--hcp-disclaimer-font-size);
+  line-height: 1.25em;
   text-align: center;
 }
 
@@ -108,7 +103,6 @@ aside img {
 }
 
 #carousel {
-  --slide-index: 0;
   overflow: hidden;
   position: relative;
   width: 100%;

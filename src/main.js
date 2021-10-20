@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
   const externalState = window.state || {};
 
   const state = {
-    autoPlay: window.mode === "production" ? true : true,
+    autoPlay: window.mode === "production" ? true : false,
     loop: window.mode === "production" ? false : false,
     slideIndex: window.mode === "production" ? -1 : -1,
     ...externalState,
@@ -17,7 +17,6 @@ window.addEventListener("load", () => {
       if (!state.loop) return;
       state.slideIndex = 0;
     }
-    carousel.style.setProperty("--slide-index", state.slideIndex);
     carousel.dataset.slideIndex = state.slideIndex;
     slides.forEach((slide) => {
       slide.style.opacity = "0";

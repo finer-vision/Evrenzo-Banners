@@ -49,26 +49,108 @@ const config = {
   backgroundImage: content.backgroundImage,
   jobCode: content.jobCode,
   hcpDisclaimer: content.hcpDisclaimer,
-  slides: [
-    { content: content.intro, timeout: 4000 },
-    { content: content.treatment, timeout: 4000 },
-    {
-      content: content.erythropoiesis,
-      backgroundColor: content.colors.primary,
-      timeout: 4000,
-    },
-    {
-      content: `
+  slides: {
+    billboard: [
+      { content: content.intro, timeout: 4000 },
+      { content: content.treatment, timeout: 4000 },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      },
+      {
+        content: `
         <div class="grid grid-3">
           ${content.disclaimer}
           ${content.references}
           <img src="${content.logos.astellas}" alt="Astellas"/>
         </div>
       `,
-      backgroundColor: content.colors.primary,
-      timeout: 3000,
-    },
-  ],
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+    ],
+    leaderboard: [
+      { content: content.intro, timeout: 4000 },
+      { content: content.treatment, timeout: 4000 },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      },
+      {
+        content: `
+        <div class="grid grid-3">
+          ${content.disclaimer}
+          ${content.references}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+    ],
+    mpu: [
+      { content: content.intro, timeout: 4000 },
+      { content: content.treatment, timeout: 4000 },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      },
+      {
+        content: `
+        <div class="grid grid-3">
+          ${content.disclaimer}
+          ${content.references}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+    ],
+    skyscraper: [
+      { content: content.intro, timeout: 4000 },
+      { content: content.treatment, timeout: 4000 },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      },
+      {
+        content: `
+        <div class="grid grid-3">
+          ${content.disclaimer}
+          ${content.references}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+    ],
+    "half-page": [
+      { content: content.intro, timeout: 4000 },
+      { content: content.treatment, timeout: 4000 },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      },
+      {
+        content: `
+        <div class="grid grid-3">
+          ${content.disclaimer}
+          ${content.references}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        </div>
+      `,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
+      },
+    ],
+  },
 };
 
 module.exports = config;

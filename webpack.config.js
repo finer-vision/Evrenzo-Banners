@@ -11,26 +11,31 @@ const types = [
     type: "billboard",
     width: "720px",
     height: "250px",
+    hcpDisclaimerFontSize: "8px",
   },
   {
     type: "leaderboard",
     width: "728px",
     height: "90px",
+    hcpDisclaimerFontSize: "8px",
   },
   {
     type: "mpu",
     width: "300px",
     height: "250px",
+    hcpDisclaimerFontSize: "8px",
   },
   {
     type: "skyscraper",
     width: "160px",
     height: "600px",
+    hcpDisclaimerFontSize: "8px",
   },
   {
     type: "half-page",
     width: "300px",
     height: "600px",
+    hcpDisclaimerFontSize: "8px",
   },
 ];
 
