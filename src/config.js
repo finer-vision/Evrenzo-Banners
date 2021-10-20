@@ -92,11 +92,11 @@ const config = {
   "half-page": {
     width: 300,
     height: 600,
-    titleFontSize: 20,
+    titleFontSize: 26,
     hcpDisclaimer: {
-      fontSize: 8,
+      fontSize: 10,
       top: 0,
-      left: 25,
+      left: 18,
     },
   },
   slides: {
@@ -205,13 +205,16 @@ const config = {
       { content: content.intro, timeout: 4000 },
       { content: content.treatment, timeout: 4000 },
       {
-        content: content.erythropoiesis,
+        content: `
+          ${content.erythropoiesis}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        `,
         backgroundColor: content.colors.primary,
         timeout: 4000,
       },
       {
         content: `
-        <div class="grid grid-3">
+        <div class="grid">
           ${content.disclaimer}
           ${content.references}
           <img src="${content.logos.astellas}" alt="Astellas"/>
