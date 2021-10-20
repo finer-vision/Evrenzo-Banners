@@ -17,15 +17,18 @@
             <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
                      style="background-color: <%= slide.backgroundColor %>;">
                 <%= slide.content %>
-                <div class="disclaimer"><%= require('./config').disclaimer %></div>
+                <div class="disclaimer"><%= require('./config').hcpDisclaimer %></div>
             </section>
         <% }) %>
     </main>
     <aside>
-        <img src="<%= require('./assets/logo.svg') %>" alt="Evrenzo roxadustat"/>
+        <img src="<%= require('./config').content.logos.evrenzo %>" alt="Evrenzo roxadustat"/>
         <small><%= require('./config').jobCode %></small>
     </aside>
 </div>
+<script>
+  window.mode = "<%= mode %>";
+</script>
 <script>
   window.addEventListener("load", () => {
     const carousel = document.querySelector("#carousel");
@@ -34,11 +37,9 @@
     const externalState = window.state || {}
 
     const state = {
-      // @todo change back to true when finished with dev work
-      autoPlay: true,
-      loop: false,
-      // @todo change back to -1 when finished with dev work
-      slideIndex: -1,
+      autoPlay: window.mode === "production" ? true : true,
+      loop: window.mode === "production" ? false : false,
+      slideIndex: window.mode === "production" ? -1 : -1,
       ...externalState,
     };
 

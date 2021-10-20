@@ -55,6 +55,7 @@ const config = {
       filename: "billboard.html",
       templateParameters: {
         type: "billboard",
+        mode: process.env.NODE_ENV,
       },
     }),
     new MiniCssExtractPlugin({
