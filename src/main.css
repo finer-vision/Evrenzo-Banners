@@ -15,8 +15,6 @@
 }
 
 :root {
-  --width: 0px;
-  --height: 0px;
   --disclaimer-font-size: 8px;
   --disclaimer-line-height: 10px;
 }
@@ -71,8 +69,6 @@ p:last-child {
 }
 
 .container-billboard {
-  --width: 720px;
-  --height: 250px;
   grid-template-columns: 579px 141px;
 }
 

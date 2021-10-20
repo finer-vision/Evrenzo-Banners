@@ -40,7 +40,7 @@ const templates = types.map((type) => {
     inject: true,
     filename: `${type.type}.html`,
     templateParameters: {
-      type: type.type,
+      ...type,
       mode: process.env.NODE_ENV,
     },
     minify: {
