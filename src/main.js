@@ -6,7 +6,7 @@ container.addEventListener("click", (event) => {
   }
 });
 
-window.addEventListener("load", () => {
+function main() {
   const carousel = document.querySelector("#carousel");
   const slides = carousel.querySelectorAll("section");
 
@@ -39,4 +39,8 @@ window.addEventListener("load", () => {
   window.nextSlide = nextSlide;
 
   nextSlide();
-});
+}
+
+window.main = main;
+
+window.addEventListener("load", main);

@@ -47,11 +47,14 @@ const STORAGE_DIR = path.resolve(__dirname, "..", "storage");
         }
 
         await page.evaluate(() => {
+          window.mode = "production";
           window.state = window.state || {
             autoPlay: false,
             loop: false,
             slideIndex: -1,
           };
+
+          window.main();
 
           // Disable slide transitions
           const carousel = document.querySelector("#carousel");
