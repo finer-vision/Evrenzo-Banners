@@ -13,7 +13,7 @@ const config = {
       { content: content.treatment, timeout: 4000 },
       {
         content: `
-          ${content.erythropoiesis},
+          ${content.erythropoiesis}
           <img src="${content.logos.astellas}" alt="Astellas"/>
         `,
         backgroundColor: content.colors.primary,
@@ -94,7 +94,7 @@ const config = {
       { content: content.treatment, timeout: 4000 },
       {
         content: `
-          ${content.erythropoiesis},
+          ${content.erythropoiesis}
           <img src="${content.logos.astellas}" alt="Astellas"/>
         `,
         backgroundColor: content.colors.primary,
