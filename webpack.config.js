@@ -47,7 +47,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg|pdf)$/i,
         type: "asset/resource",
         generator: {
           filename: "[name][ext]",

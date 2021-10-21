@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" style="
-        --width: <%= require("./config/config")[type].width %>px;
-        --height: <%= require("./config/config")[type].height %>px;
-        --hcp-disclaimer-font-size: <%= require("./config/config")[type].hcpDisclaimer.fontSize %>px;
-        --hcp-disclaimer-top: <%= require("./config/config")[type].hcpDisclaimer.top %>px;
-        --hcp-disclaimer-left: <%= require("./config/config")[type].hcpDisclaimer.left %>px;
-        --title-font-size: <%= require("./config/config")[type].titleFontSize %>px
+        --width: <%= require('./config/config')[type].width %>px;
+        --height: <%= require('./config/config')[type].height %>px;
+        --hcp-disclaimer-font-size: <%= require('./config/config')[type].hcpDisclaimer.fontSize %>px;
+        --hcp-disclaimer-top: <%= require('./config/config')[type].hcpDisclaimer.top %>px;
+        --hcp-disclaimer-left: <%= require('./config/config')[type].hcpDisclaimer.left %>px;
+        --title-font-size: <%= require('./config/config')[type].titleFontSize %>px
         ">
 <head>
     <meta charset="UTF-8"/>
@@ -17,14 +17,14 @@
     <title>Ad Banners</title>
 </head>
 <body>
-<div class="container container-<%= type %>">
+<div id="container" class="container container-<%= type %>" data-href="<%= require('./assets/pi.pdf') %>">
     <main id="carousel" data-slide-index="0"
           style="background-image: url('<%= require('./config/config').backgroundImage %>')">
         <% require('./config/config').slides[type].forEach((slide, index) => { %>
             <section data-slide-index="<%= index %>" data-timeout="<%= slide.timeout %>"
                      style="background-color: <%= slide.backgroundColor %>;">
                 <%= slide.content %>
-                <% if (["billboard", "leaderboard"].includes(type)) { %>
+                <% if (['billboard', 'leaderboard'].includes(type)) { %>
                     <div class="hcp-disclaimer">
                         <%= require('./config/config').hcpDisclaimer %>
                     </div>
@@ -35,7 +35,7 @@
     <aside>
         <img src="<%= require('./config/config').content.logos.evrenzo %>" alt="Evrenzo roxadustat"/>
         <div class="legal">
-            <% if (["mpu", "skyscraper", "half-page"].includes(type)) { %>
+            <% if (['mpu', 'skyscraper', 'half-page'].includes(type)) { %>
                 <div class="hcp-disclaimer">
                     <%= require('./config/config').hcpDisclaimer %>
                 </div>

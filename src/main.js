@@ -1,3 +1,11 @@
+const container = document.querySelector("#container");
+
+window.addEventListener("click", (event) => {
+  if (event.target.nodeName !== "A") {
+    window.open(container.dataset.href, "_blank");
+  }
+});
+
 window.addEventListener("load", () => {
   const carousel = document.querySelector("#carousel");
   const slides = carousel.querySelectorAll("section");
@@ -7,7 +15,7 @@ window.addEventListener("load", () => {
   const state = {
     autoPlay: window.mode === "production" ? true : false,
     loop: window.mode === "production" ? false : false,
-    slideIndex: window.mode === "production" ? -1 : -1,
+    slideIndex: window.mode === "production" ? -1 : 3,
     ...externalState,
   };
 

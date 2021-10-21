@@ -39,7 +39,7 @@ const content = {
     <div class="disclaimer">
         <p>This advert is intended for UK and EU audience only.</p>
         <p>Please note that indications and availability may vary in different countries.</p>
-        <p><span class="underline">Refer to your local summary of product characteristics/</span> prescribing information for details.</p>
+        <p><a class="underline" href="https://www.medicines.org.uk/emc/product/12835" target="_blank" rel="noreferrer">Refer to your local summary of product characteristics/</a> prescribing information for details.</p>
     </div>
   `,
 };
