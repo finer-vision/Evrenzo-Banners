@@ -12,13 +12,16 @@ const config = {
       { content: content.intro, timeout: 4000 },
       { content: content.treatment, timeout: 4000 },
       {
-        content: content.erythropoiesis,
+        content: `
+          ${content.erythropoiesis},
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        `,
         backgroundColor: content.colors.primary,
         timeout: 4000,
       },
       {
         content: `
-        <div class="grid grid-3">
+        <div class="grid">
           ${content.disclaimer}
           ${content.references}
           <img src="${content.logos.astellas}" alt="Astellas"/>

@@ -220,6 +220,13 @@ section[data-slide-index="4"] {
   margin-bottom: 0.8em;
 }
 
+.container-billboard section[data-slide-index="2"] img,
+.container-billboard section[data-slide-index="3"] img {
+  position: absolute;
+  top: var(--hcp-disclaimer-left);
+  right: var(--hcp-disclaimer-left);
+}
+
 .container-billboard section[data-slide-index="2"] ul {
   font-size: 12px;
   line-height: 16px;
@@ -232,6 +239,10 @@ section[data-slide-index="4"] {
 
 .container-billboard section[data-slide-index="3"] {
   font-size: 8px;
+}
+
+.container-billboard section[data-slide-index="3"] .grid {
+  grid-template-columns: 225px 208px;
 }
 
 /**
