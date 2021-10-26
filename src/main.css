@@ -517,12 +517,24 @@ section[data-slide-index="4"] {
   margin-top: 1em;
 }
 
+.container-skyscraper .prelude span {
+  display: block;
+}
+
+.container-skyscraper aside .hcp-disclaimer .highlight-primary span {
+  display: block;
+}
+
 .container-skyscraper aside small {
   width: 100px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
+}
+
+.container-skyscraper aside img {
+  width: 126px;
 }
 
 .container-skyscraper .title {
@@ -570,7 +582,7 @@ section[data-slide-index="4"] {
 }
 
 .container-skyscraper section[data-slide-index="3"] ol {
-  font-size: 7px;
+  font-size: 10px;
   order: -1;
 }
 
@@ -610,7 +622,7 @@ section[data-slide-index="4"] {
 }
 
 .container-half-page aside img {
-  width: 122px;
+  width: 126px;
 }
 
 .container-half-page aside .hcp-disclaimer {

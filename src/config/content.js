@@ -3,17 +3,16 @@ const content = {
     primary: "#007A33",
   },
   backgroundImage: require("../assets/background.jpg"),
-  jobCode: `EVZ_2021_0060_UK OCTOBER 2021`,
   logos: {
     evrenzo: require("../assets/evrenzo-logo.svg"),
     astellas: require("../assets/astellas-logo.svg"),
   },
   hcpDisclaimer: `
     For Healthcare Professionals Only<br/>
-    <span class="highlight-primary">Click here for UK Prescribing Information and Adverse Event Reporting</span>
+    <span class="highlight-primary">Click here for UK Prescribing Information and Adverse <span>Event Reporting</span></span>
   `,
   intro: `
-    <h2 class="prelude">EVRENZO (roxadustat) is indicated for treatment of adult patients with symptomatic anaemia associated with CKD<sup>1</sup></h2>
+    <h2 class="prelude"><span>EVRENZO (roxadustat) is </span><span>indicated for treatment of adult patients with symptomatic </span>anaemia associated with CKD<sup>1</sup></h2>
     <h1 class="title">In anaemia of chronic kidney disease (CKD), the treatment landscape is changing</h1>
   `,
   treatment: `
