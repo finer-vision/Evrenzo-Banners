@@ -46,7 +46,7 @@ const types = {
     hcpDisclaimer: {
       fontSize: 10,
       top: 0,
-      left: 18,
+      left: 15,
     },
   },
 };

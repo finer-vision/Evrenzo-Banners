@@ -20,7 +20,7 @@ const content = {
     <h1 class="title">Follow a new pathway to treat anaemia of CKD…</h1>
   `,
   erythropoiesis: `
-    <h1 class="title">EVRENZO™ harnesses the HIF pathway to stimulate erythropoiesis<sup>1,2</sup> </h1>
+    <h1 class="title"><span>EVRENZO™</span> harnesses the HIF pathway to stimulate erythropoiesis<sup>1,2</sup> </h1>
     <ul>
         <li>HIF (hypoxia-inducible factor) is a central regulator of erythropoiesis<sup>3</sup></li>
         <li>EVRENZO is the first treatment to activate the HIF pathway<sup>4</sup></li>
