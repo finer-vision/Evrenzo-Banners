@@ -4,7 +4,13 @@ const types = require("./types");
 const config = {
   content: content,
   backgroundImage: content.backgroundImage,
-  jobCode: content.jobCode,
+  jobCode: {
+    billboard: "EVZ_2021_0060_UK",
+    leaderboard: "EVZ_2021_0131_UK",
+    mpu: "EVZ_2021_0128_UK",
+    skyscraper: "EVZ_2021_0129_UK",
+    "half-page": "EVZ_2021_0130_UK",
+  },
   hcpDisclaimer: content.hcpDisclaimer,
   ...types,
   slides: {
