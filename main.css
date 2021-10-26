@@ -52,7 +52,6 @@ html {
   font-family: "Trade Gothic LT Std", Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  text-rendering: geometricPrecision;
 }
 
 sup {
@@ -286,10 +285,52 @@ section[data-slide-index="4"] {
   background-position: 14% 61.5%;
 }
 
+.container-leaderboard #carousel[data-slide-index="1"] .title {
+  margin-top: 0.18em;
+}
+
 .container-leaderboard section[data-slide-index="2"] .hcp-disclaimer,
 .container-leaderboard section[data-slide-index="3"] .hcp-disclaimer,
 .container-leaderboard section[data-slide-index="4"] .hcp-disclaimer {
   color: #ff9e1a;
+}
+
+.container-leaderboard section[data-slide-index="2"],
+.container-leaderboard section[data-slide-index="3"],
+.container-leaderboard section[data-slide-index="4"] {
+  grid-template-rows: 1fr;
+  padding-bottom: var(--hcp-disclaimer-left);
+}
+
+.container-leaderboard section[data-slide-index="2"] ul,
+.container-leaderboard section[data-slide-index="3"] ol,
+.container-leaderboard section[data-slide-index="4"] .disclaimer {
+  margin: auto;
+}
+
+.container-leaderboard section[data-slide-index="3"] img,
+.container-leaderboard section[data-slide-index="4"] img {
+  margin-top: 1em;
+}
+
+.container-leaderboard section[data-slide-index="2"] li,
+.container-leaderboard section[data-slide-index="3"] li {
+  margin-bottom: 0.6em;
+}
+
+.container-leaderboard section[data-slide-index="2"] li:last-child,
+.container-leaderboard section[data-slide-index="3"] li:last-child {
+  margin-bottom: 0;
+}
+
+.container-leaderboard section[data-slide-index="3"] .grid,
+.container-leaderboard section[data-slide-index="4"] .grid {
+  height: 100%;
+}
+
+.container-leaderboard section[data-slide-index="2"] li::marker {
+  font-size: 1.5em;
+  line-height: 10px;
 }
 
 .container-leaderboard aside small {
@@ -323,9 +364,15 @@ section[data-slide-index="4"] {
   line-height: 0.9em;
 }
 
+.container-leaderboard section[data-slide-index="0"] {
+  grid-template-rows: 1fr;
+  padding-bottom: var(--hcp-disclaimer-left);
+}
+
 .container-leaderboard section[data-slide-index="0"] .title {
   text-align: center;
   width: 400px;
+  margin: auto;
 }
 
 .container-leaderboard section[data-slide-index="1"] .title {
@@ -378,6 +425,10 @@ section[data-slide-index="4"] {
 .container-leaderboard section[data-slide-index="4"] .disclaimer {
   width: 225px;
   font-size: 8px;
+}
+
+.container-leaderboard .prelude {
+  width: 195px;
 }
 
 /**
