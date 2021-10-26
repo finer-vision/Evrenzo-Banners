@@ -225,10 +225,16 @@ section[data-slide-index="4"] {
 
 .container-billboard section[data-slide-index="0"] .title {
   width: 529px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-billboard section[data-slide-index="1"] .title {
   width: 319px;
+}
+
+.container-billboard .hcp-disclaimer {
+  width: 157px;
 }
 
 .container-billboard section[data-slide-index="0"] .title {
@@ -443,6 +449,14 @@ section[data-slide-index="4"] {
   place-content: center;
   padding-left: var(--hcp-disclaimer-left);
   padding-right: var(--hcp-disclaimer-left);
+}
+
+.container-mpu li {
+  margin-bottom: 0.7em;
+}
+
+.container-mpu li:last-child {
+  margin-bottom: 0;
 }
 
 .container-mpu aside small {

@@ -1,6 +1,6 @@
 const types = {
   billboard: {
-    width: 720,
+    width: 970,
     height: 250,
     titleFontSize: 26,
     hcpDisclaimer: {
