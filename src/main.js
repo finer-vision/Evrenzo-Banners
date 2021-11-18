@@ -5,7 +5,7 @@ hrefs.forEach((href) => {
     (event) => {
       event.stopPropagation();
       window.open(href.dataset.href, "_blank");
-      Enabler.exit(item.dataset.exitName);
+      Enabler.exit(href.dataset.href);
     },
     false
   );
