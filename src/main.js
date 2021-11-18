@@ -1,9 +1,10 @@
-
-const exits = document.querySelectorAll('#bg-exit');
-exits.forEach(item => item.addEventListener("click", (event) => {
-
-  Enabler.exitOverride(item.dataset.exitName, item.dataset.href);
-}));
+const exits = document.querySelectorAll(".bg-exit");
+exits.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    window.open(item.dataset.href, "_blank");
+    Enabler.exit(item.dataset.exitName);
+  }, false);
+});
 
 function main() {
   const carousel = document.querySelector("#carousel");
