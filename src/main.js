@@ -1,10 +1,9 @@
-const container = document.querySelector("#container");
 
-container.addEventListener("click", (event) => {
-  if (event.target.nodeName !== "A") {
-    window.open(container.dataset.href, "_blank");
-  }
-});
+const exits = document.querySelectorAll('#bg-exit');
+exits.forEach(item => item.addEventListener("click", (event) => {
+
+  Enabler.exitOverride(item.dataset.exitName, item.dataset.href);
+}));
 
 function main() {
   const carousel = document.querySelector("#carousel");

@@ -15,10 +15,39 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Ad Banners</title>
-    <script>window.mode = "<%= mode %>";</script>
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+    <script>
+      window.mode = "<%= mode %>";
+      // If true, start function. If false, listen for INIT.
+      window.onload = function() {
+        if (Enabler.isInitialized()) {
+          enablerInitHandler();
+
+        } else {
+          Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+        }
+      }
+
+      function enablerInitHandler() {
+
+        if (Enabler.isPageLoaded()) {
+          politeInit();
+        } else {
+          Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+        }
+        // Start polite loading, or start animation,
+        // load in your image assets, call Enabler methods,
+        // and/or include other Studio modules.
+      }
+      function politeInit(){
+        // Add your code to hide any loading image or animation and load creative
+        // assets or begin creative animation.
+      }
+    </script>
+
 </head>
 <body>
-<div id="container" class="container container-<%= type %>" data-href="<%= require('./assets/pi.pdf') %>">
+<div id="container" class="container container-<%= type %>">
     <main id="carousel" data-slide-index="0"
           style="background-image: url('<%= require('./config/config').backgroundImage %>')">
         <% require('./config/config').slides[type].forEach((slide, index) => { %>
