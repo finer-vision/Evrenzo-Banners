@@ -1,9 +1,14 @@
-const exits = document.querySelectorAll(".bg-exit");
-exits.forEach((item) => {
-  item.addEventListener("click", (event) => {
-    window.open(item.dataset.href, "_blank");
-    Enabler.exit(item.dataset.exitName);
-  }, false);
+const hrefs = document.querySelectorAll("[data-href]");
+hrefs.forEach((href) => {
+  href.addEventListener(
+    "click",
+    (event) => {
+      event.stopPropagation();
+      window.open(href.dataset.href, "_blank");
+      Enabler.exit(item.dataset.exitName);
+    },
+    false
+  );
 });
 
 function main() {

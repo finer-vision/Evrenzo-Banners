@@ -1,5 +1,3 @@
-
-const pi = require('../assets/pi.pdf');
 const content = {
   colors: {
     primary: "#007A33",
@@ -11,7 +9,7 @@ const content = {
   },
   hcpDisclaimer: `
     For Healthcare Professionals Only<br/>
-    <span class="highlight-primary bg-exit" data-exit-name="UK Prescribing Information and Adverse" data-href="${pi}">Click here for UK Prescribing Information and Adverse <span>Event Reporting</span></span>
+    <span class="highlight-primary bg-exit" data-exit-name="UK Prescribing Information and Adverse">Click here for UK Prescribing Information and Adverse <span>Event Reporting</span></span>
   `,
   intro: `
     <h2 class="prelude"><span>EVRENZO (roxadustat) is </span><span>indicated for treatment of adult patients with symptomatic </span>anaemia associated with CKD<sup>1</sup></h2>

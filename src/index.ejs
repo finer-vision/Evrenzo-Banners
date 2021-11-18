@@ -47,7 +47,7 @@
 
 </head>
 <body>
-<div id="container" class="container container-<%= type %>">
+<div id="container" class="container container-<%= type %>" data-href="<%= require("./assets/pi.pdf") %>">
     <main id="carousel" data-slide-index="0"
           style="background-image: url('<%= require('./config/config').backgroundImage %>')">
         <% require('./config/config').slides[type].forEach((slide, index) => { %>
