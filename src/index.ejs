@@ -19,7 +19,7 @@
     <script>
       window.mode = "<%= mode %>";
       // If true, start function. If false, listen for INIT.
-      window.onload = function() {
+      window.onload = function () {
         if (Enabler.isInitialized()) {
           enablerInitHandler();
 
@@ -29,7 +29,7 @@
       }
 
       function enablerInitHandler() {
-
+        addListeners();
         if (Enabler.isPageLoaded()) {
           politeInit();
         } else {
@@ -39,6 +39,16 @@
         // load in your image assets, call Enabler methods,
         // and/or include other Studio modules.
       }
+
+      function addListeners() {
+        document.getElementById("bg-exit").addEventListener('click', exitClickHandler);
+        document.querySelector(".bg-exit").addEventListener('click', exitClickHandler);
+      }
+
+      function exitClickHandler() {
+        Enabler.exit('Background Exit');
+      }
+
       function politeInit(){
         // Add your code to hide any loading image or animation and load creative
         // assets or begin creative animation.

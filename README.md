@@ -11,6 +11,8 @@ npm start
 
 ### Packaging
 
+* Please keep backup image below 40KB
+
 You will need the following dependencies to generate GIFs:
 
 ```shell
