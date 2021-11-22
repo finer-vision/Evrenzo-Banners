@@ -5,7 +5,7 @@
         --hcp-disclaimer-left: 17px;
         --title-font-size: 20px"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Ad Banners</title><script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script><script>window.mode = "production";
       // If true, start function. If false, listen for INIT.
-      window.onload = function() {
+      window.onload = function () {
         if (Enabler.isInitialized()) {
           enablerInitHandler();
 
@@ -15,7 +15,7 @@
       }
 
       function enablerInitHandler() {
-
+        addListeners();
         if (Enabler.isPageLoaded()) {
           politeInit();
         } else {
@@ -25,6 +25,16 @@
         // load in your image assets, call Enabler methods,
         // and/or include other Studio modules.
       }
+
+      function addListeners() {
+        document.getElementById("bg-exit").addEventListener('click', exitClickHandler);
+        document.querySelector(".bg-exit").addEventListener('click', exitClickHandler);
+      }
+
+      function exitClickHandler() {
+        Enabler.exit('Background Exit');
+      }
+
       function politeInit(){
         // Add your code to hide any loading image or animation and load creative
         // assets or begin creative animation.
