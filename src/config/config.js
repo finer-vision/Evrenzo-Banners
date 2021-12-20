@@ -36,6 +36,14 @@ const config = {
         backgroundColor: content.colors.primary,
         timeout: 3000,
       },
+      {
+        content: `
+          ${content.erythropoiesis}
+          <img src="${content.logos.astellas}" alt="Astellas"/>
+        `,
+        backgroundColor: content.colors.primary,
+        timeout: 4000,
+      }
     ],
     leaderboard: [
       { content: content.intro, timeout: 3000 },
