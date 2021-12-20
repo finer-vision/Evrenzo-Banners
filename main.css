@@ -261,7 +261,7 @@ section[data-slide-index="4"] {
 
 .container-billboard section[data-slide-index="2"] img,
 .container-billboard section[data-slide-index="3"] img,
-.container-billboard section[data-slide-index="4"] img{
+.container-billboard section[data-slide-index="4"] img {
   position: absolute;
   top: var(--hcp-disclaimer-left);
   right: var(--hcp-disclaimer-left);
@@ -275,7 +275,7 @@ section[data-slide-index="4"] {
 
 .container-billboard section[data-slide-index="2"] .hcp-disclaimer span,
 .container-billboard section[data-slide-index="3"] .hcp-disclaimer span,
-.container-billboard section[data-slide-index="2"] .hcp-disclaimer span {
+.container-billboard section[data-slide-index="4"] .hcp-disclaimer span {
   color: #ff9e1a;
 }
 
@@ -292,7 +292,7 @@ section[data-slide-index="4"] {
 */
 
 section[data-slide-index="5"] {
-  color: #fff
+  color: #fff;
 }
 
 .container-leaderboard #carousel {
@@ -413,21 +413,21 @@ section[data-slide-index="5"] {
 }
 
 .container-leaderboard section[data-slide-index="2"],
-.container-leaderboard section[data-slide-index="5"]{
+.container-leaderboard section[data-slide-index="5"] {
   grid-auto-columns: auto;
   gap: 2em;
   height: 100%;
 }
 
 .container-leaderboard section[data-slide-index="2"],
-.container-leaderboard section[data-slide-index="5"]{
+.container-leaderboard section[data-slide-index="5"] {
   display: grid;
   grid-template-columns: 207px 355px;
   gap: 1em;
 }
 
 .container-leaderboard section[data-slide-index="2"] > *,
-.container-leaderboard section[data-slide-index="5"] > *{
+.container-leaderboard section[data-slide-index="5"] > * {
   width: auto;
 }
 
@@ -570,9 +570,21 @@ section[data-slide-index="5"] {
   margin-right: var(--hcp-disclaimer-left);
 }
 
-.container-mpu section[data-slide-index="3"] ol {
-  width: 278px;
+.container-mpu section[data-slide-index="3"] ol,
+.container-mpu section[data-slide-index="3"] .disclaimer {
+  width: 272px;
   font-size: 8px;
+}
+
+.container-mpu section[data-slide-index="3"] li {
+  margin-bottom: 0.5em;
+}
+.container-mpu section[data-slide-index="3"] .grid {
+  gap: 0.4em;
+}
+
+.container-mpu section[data-slide-index="3"] .disclaimer p {
+  margin-bottom: 0;
 }
 
 /**
