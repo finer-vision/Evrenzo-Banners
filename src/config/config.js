@@ -43,7 +43,7 @@ const config = {
         `,
         backgroundColor: content.colors.primary,
         timeout: 4000,
-      }
+      },
     ],
     leaderboard: [
       { content: content.intro, timeout: 3000 },
@@ -92,6 +92,7 @@ const config = {
         <div class="grid">
             <img src="${content.logos.astellas}" alt="Astellas"/>
             ${content.references}
+            ${content.disclaimer}
         </div>
       `,
         backgroundColor: content.colors.primary,
