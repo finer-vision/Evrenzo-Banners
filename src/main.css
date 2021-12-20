@@ -291,6 +291,10 @@ section[data-slide-index="4"] {
   Leaderboard
 */
 
+section[data-slide-index="5"] {
+  color: #fff
+}
+
 .container-leaderboard #carousel {
   background-position: 14% 61.5%;
   background-size: 170% auto;
@@ -310,20 +314,23 @@ section[data-slide-index="4"] {
 
 .container-leaderboard section[data-slide-index="2"] .hcp-disclaimer,
 .container-leaderboard section[data-slide-index="3"] .hcp-disclaimer,
-.container-leaderboard section[data-slide-index="4"] .hcp-disclaimer {
+.container-leaderboard section[data-slide-index="4"] .hcp-disclaimer,
+.container-leaderboard section[data-slide-index="5"] .hcp-disclaimer {
   color: #ff9e1a;
 }
 
 .container-leaderboard section[data-slide-index="2"],
 .container-leaderboard section[data-slide-index="3"],
-.container-leaderboard section[data-slide-index="4"] {
+.container-leaderboard section[data-slide-index="4"],
+.container-leaderboard section[data-slide-index="5"] {
   grid-template-rows: 1fr;
   padding-bottom: var(--hcp-disclaimer-left);
 }
 
 .container-leaderboard section[data-slide-index="2"] ul,
 .container-leaderboard section[data-slide-index="3"] ol,
-.container-leaderboard section[data-slide-index="4"] .disclaimer {
+.container-leaderboard section[data-slide-index="4"] .disclaimer,
+.container-leaderboard section[data-slide-index="5"] ul {
   margin: auto;
 }
 
@@ -333,12 +340,14 @@ section[data-slide-index="4"] {
 }
 
 .container-leaderboard section[data-slide-index="2"] li,
-.container-leaderboard section[data-slide-index="3"] li {
+.container-leaderboard section[data-slide-index="3"] li,
+.container-leaderboard section[data-slide-index="5"] li {
   margin-bottom: 0.6em;
 }
 
 .container-leaderboard section[data-slide-index="2"] li:last-child,
-.container-leaderboard section[data-slide-index="3"] li:last-child {
+.container-leaderboard section[data-slide-index="3"] li:last-child,
+.container-leaderboard section[data-slide-index="5"] li:last-child {
   margin-bottom: 0;
 }
 
@@ -347,7 +356,8 @@ section[data-slide-index="4"] {
   height: 100%;
 }
 
-.container-leaderboard section[data-slide-index="2"] li::marker {
+.container-leaderboard section[data-slide-index="2"] li::marker,
+.container-leaderboard section[data-slide-index="5"] li::marker {
   font-size: 1.5em;
   line-height: 10px;
 }
@@ -366,6 +376,10 @@ section[data-slide-index="4"] {
   .highlight-primary,
 .container-leaderboard
   section[data-slide-index="4"]
+  .hcp-disclaimer
+  .highlight-primary,
+.container-leaderboard
+  section[data-slide-index="5"]
   .hcp-disclaimer
   .highlight-primary {
   color: #fff;
@@ -398,37 +412,44 @@ section[data-slide-index="4"] {
   width: 303px;
 }
 
-.container-leaderboard section[data-slide-index="2"] {
+.container-leaderboard section[data-slide-index="2"],
+.container-leaderboard section[data-slide-index="5"]{
   grid-auto-columns: auto;
   gap: 2em;
   height: 100%;
 }
 
-.container-leaderboard section[data-slide-index="2"] {
+.container-leaderboard section[data-slide-index="2"],
+.container-leaderboard section[data-slide-index="5"]{
   display: grid;
   grid-template-columns: 207px 355px;
   gap: 1em;
 }
 
-.container-leaderboard section[data-slide-index="2"] > * {
+.container-leaderboard section[data-slide-index="2"] > *,
+.container-leaderboard section[data-slide-index="5"] > *{
   width: auto;
 }
 
-.container-leaderboard section[data-slide-index="2"] .title {
+.container-leaderboard section[data-slide-index="2"] .title,
+.container-leaderboard section[data-slide-index="5"] .title {
   font-size: 13px;
 }
 
-.container-leaderboard section[data-slide-index="2"] ul {
+.container-leaderboard section[data-slide-index="2"] ul,
+.container-leaderboard section[data-slide-index="5"] ul {
   font-size: 10px;
 }
 
-.container-leaderboard section[data-slide-index="2"] .hcp-disclaimer {
+.container-leaderboard section[data-slide-index="2"] .hcp-disclaimer,
+.container-leaderboard section[data-slide-index="5"] .hcp-disclaimer {
   width: 149px;
 }
 
 .container-leaderboard section[data-slide-index="2"],
 .container-leaderboard section[data-slide-index="3"],
-.container-leaderboard section[data-slide-index="4"] {
+.container-leaderboard section[data-slide-index="4"],
+.container-leaderboard section[data-slide-index="5"] {
   font-size: 10px;
 }
 

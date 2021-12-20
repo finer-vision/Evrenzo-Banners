@@ -47,11 +47,11 @@ const config = {
     ],
     leaderboard: [
       { content: content.intro, timeout: 3000 },
-      { content: content.treatment, timeout: 4000 },
+      { content: content.treatment, timeout: 3000 },
       {
         content: content.erythropoiesis,
         backgroundColor: content.colors.primary,
-        timeout: 3000,
+        timeout: 5000,
       },
       {
         content: `
@@ -61,7 +61,7 @@ const config = {
         </div>
       `,
         backgroundColor: content.colors.primary,
-        timeout: 3000,
+        timeout: 1000,
       },
       {
         content: `
@@ -72,6 +72,11 @@ const config = {
       `,
         backgroundColor: content.colors.primary,
         timeout: 2000,
+      },
+      {
+        content: content.erythropoiesis,
+        backgroundColor: content.colors.primary,
+        timeout: 3000,
       },
     ],
     mpu: [
