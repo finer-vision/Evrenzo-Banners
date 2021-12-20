@@ -751,19 +751,22 @@ section[data-slide-index="4"] {
 }
 
 .container-half-page section[data-slide-index="2"] img,
-.container-half-page section[data-slide-index="3"] img {
+.container-half-page section[data-slide-index="3"] img,
+.container-half-page section[data-slide-index="4"] img {
   position: absolute;
   bottom: var(--hcp-disclaimer-left);
   right: var(--hcp-disclaimer-left);
 }
 
-.container-half-page section[data-slide-index="2"] .title {
+.container-half-page section[data-slide-index="2"] .title,
+.container-half-page section[data-slide-index="4"] .title {
   font-size: 20px;
   margin-bottom: 2em;
 }
 
 .container-half-page section[data-slide-index="2"] ul,
-.container-half-page section[data-slide-index="3"] ol {
+.container-half-page section[data-slide-index="3"] ol,
+.container-half-page section[data-slide-index="4"] ul {
   font-size: 13px;
 }
 
