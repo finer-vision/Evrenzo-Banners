@@ -15,15 +15,15 @@ const config = {
   ...types,
   slides: {
     billboard: [
-      { content: content.intro, timeout: 4000 },
-      { content: content.treatment, timeout: 4000 },
+      { content: content.intro, timeout: 3000 },
+      { content: content.treatment, timeout: 3000 },
       {
         content: `
           ${content.erythropoiesis}
           <img src="${content.logos.astellas}" alt="Astellas"/>
         `,
         backgroundColor: content.colors.primary,
-        timeout: 4000,
+        timeout: 6000,
       },
       {
         content: `
@@ -34,7 +34,7 @@ const config = {
         </div>
       `,
         backgroundColor: content.colors.primary,
-        timeout: 3000,
+        timeout: 2000,
       },
       {
         content: `
